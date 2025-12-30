@@ -2,6 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { actasService, notificationsService } from '../services/supabaseService';
+import CuentasClaras from './CuentasClaras';
+import GobernanzaDigital from './GobernanzaDigital';
+import MuroEvidencias from './MuroEvidencias';
+import AlertasInteligentes from './AlertasInteligentes';
 import CuentaBancaria from './CuentaBancaria';
 import UploadActa from './UploadActa';
 import Notifications from './Notifications';
@@ -120,63 +124,37 @@ const Dashboard = () => {
         {/* Page Header */}
         <div className="dashboard-page-header">
           <div>
-            <h1 className="dashboard-page-title">Dashboard</h1>
-            <p className="dashboard-page-subtitle">Gestiona tu comunidad de vecinos</p>
-          </div>
-          <div className="dashboard-actions-header">
-            <button
-              onClick={() => setShowUpload(true)}
-              className="btn btn-primary"
-            >
-              📤 Subir Nueva Acta
-            </button>
+            <h1 className="dashboard-page-title">Dashboard de Gestión</h1>
+            <p className="dashboard-page-subtitle">Transparencia bancaria en tiempo real, juntas sin impugnaciones y control total desde el móvil</p>
           </div>
         </div>
 
-        {loading ? (
-          <div style={{ textAlign: 'center', padding: '2rem' }}>
-            <p>Cargando datos...</p>
-          </div>
-        ) : (
-          <>
-            {/* Quick Stats */}
-            <div className="dashboard-stats">
-              <div className="stat-card">
-                <div className="stat-icon">📋</div>
-                <div className="stat-content">
-                  <div className="stat-value">{actas.length}</div>
-                  <div className="stat-label">Actas Totales</div>
-                </div>
-              </div>
-              <div className="stat-card">
-                <div className="stat-icon">🔔</div>
-                <div className="stat-content">
-                  <div className="stat-value">{unreadNotifications}</div>
-                  <div className="stat-label">Notificaciones</div>
-                </div>
-              </div>
-              <div className="stat-card">
-                <div className="stat-icon">📄</div>
-                <div className="stat-content">
-                  <div className="stat-value">{actas.filter(a => a.estado === 'Pendiente').length}</div>
-                  <div className="stat-label">Pendientes</div>
-                </div>
-              </div>
-            </div>
-          </>
-        )}
-
-        {/* Cuenta Bancaria Section */}
+        {/* Panel de Alertas Inteligentes - Siempre visible arriba */}
         <div className="dashboard-section">
-          <CuentaBancaria />
+          <AlertasInteligentes />
         </div>
 
-        {/* Actas Section */}
-        {!loading && (
+        {/* Cuentas Claras - Dashboard Fintech */}
+        <div className="dashboard-section">
+          <CuentasClaras />
+        </div>
+
+        {/* Gobernanza Digital */}
+        <div className="dashboard-section">
+          <GobernanzaDigital />
+        </div>
+
+        {/* Muro de Evidencias */}
+        <div className="dashboard-section">
+          <MuroEvidencias />
+        </div>
+
+        {/* Actas Section - Mantener compatibilidad */}
+        {!loading && actas.length > 0 && (
           <div className="dashboard-section">
             <div className="actas-header">
               <div>
-                <h2 className="actas-title">📋 Nuevas Actas</h2>
+                <h2 className="actas-title">📋 Actas de la Comunidad</h2>
                 <p className="actas-subtitle">Consulta las últimas actas de tu comunidad</p>
               </div>
               <button
@@ -187,48 +165,35 @@ const Dashboard = () => {
               </button>
             </div>
 
-            {actas.length === 0 ? (
-              <div style={{ textAlign: 'center', padding: '3rem', color: 'var(--text-gray)' }}>
-                <p>No hay actas disponibles aún.</p>
-                <button
-                  onClick={() => setShowUpload(true)}
-                  className="btn btn-primary"
-                  style={{ marginTop: '1rem' }}
-                >
-                  Subir Primera Acta
-                </button>
-              </div>
-            ) : (
-              <div className="actas-grid">
-                {actas.map((acta) => (
-                  <div key={acta.id} className="acta-card">
-                    <div className="acta-header">
-                      <span className="acta-date">{new Date(acta.fecha).toLocaleDateString('es-ES')}</span>
-                      <span className={`acta-status ${acta.estado.toLowerCase()}`}>
-                        {acta.estado}
-                      </span>
-                    </div>
-                    <h3 className="acta-title">{acta.titulo}</h3>
-                    <p className="acta-description">{acta.descripcion}</p>
-                    <div className="acta-footer">
-                      <span>📄 {acta.tipo}</span>
-                      <span>👥 {acta.participantes || 0}</span>
-                    </div>
-                    {acta.archivo_url && (
-                      <a 
-                        href={acta.archivo_url} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="btn btn-secondary"
-                        style={{ marginTop: '0.5rem', fontSize: '0.875rem' }}
-                      >
-                        📄 Ver Archivo
-                      </a>
-                    )}
+            <div className="actas-grid">
+              {actas.map((acta) => (
+                <div key={acta.id} className="acta-card">
+                  <div className="acta-header">
+                    <span className="acta-date">{new Date(acta.fecha).toLocaleDateString('es-ES')}</span>
+                    <span className={`acta-status ${acta.estado.toLowerCase()}`}>
+                      {acta.estado}
+                    </span>
                   </div>
-                ))}
-              </div>
-            )}
+                  <h3 className="acta-title">{acta.titulo}</h3>
+                  <p className="acta-description">{acta.descripcion}</p>
+                  <div className="acta-footer">
+                    <span>📄 {acta.tipo}</span>
+                    <span>👥 {acta.participantes || 0}</span>
+                  </div>
+                  {acta.archivo_url && (
+                    <a 
+                      href={acta.archivo_url} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="btn btn-secondary"
+                      style={{ marginTop: '0.5rem', fontSize: '0.875rem' }}
+                    >
+                      📄 Ver Archivo
+                    </a>
+                  )}
+                </div>
+              ))}
+            </div>
           </div>
         )}
       </main>

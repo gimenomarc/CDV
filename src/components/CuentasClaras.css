@@ -1,0 +1,380 @@
+/* Cuentas Claras - Estilo Fintech */
+.cuentas-claras-container {
+  background: var(--bg-white);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .cuentas-claras-container {
+    padding: 1.5rem;
+    border-radius: 1rem;
+  }
+}
+
+.cuentas-claras-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.cuentas-claras-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.cuentas-claras-subtitle {
+  font-size: 1rem;
+  color: var(--text-gray);
+}
+
+.cuentas-claras-badge {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background: var(--primary-gradient);
+  color: white;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.cuentas-claras-loading {
+  text-align: center;
+  padding: 3rem;
+}
+
+.loading-spinner {
+  width: 3rem;
+  height: 3rem;
+  border: 4px solid var(--border-color);
+  border-top-color: var(--primary-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto 1rem;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.cuentas-claras-empty {
+  text-align: center;
+  padding: 3rem;
+  color: var(--text-gray);
+}
+
+/* Balance Card - Estilo Fintech */
+.cuentas-claras-balance-card {
+  background: linear-gradient(135deg, var(--primary-blue) 0%, var(--primary-blue-light) 100%);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  color: white;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 24px rgba(30, 64, 175, 0.3);
+}
+
+@media (max-width: 768px) {
+  .cuentas-claras-balance-card {
+    padding: 1.5rem;
+  }
+}
+
+.balance-main {
+  margin-bottom: 1.5rem;
+}
+
+.balance-label {
+  font-size: 0.875rem;
+  opacity: 0.9;
+  margin-bottom: 0.5rem;
+  font-weight: 500;
+}
+
+.balance-value {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 0.5rem;
+  letter-spacing: -0.02em;
+}
+
+@media (max-width: 768px) {
+  .balance-value {
+    font-size: 2.25rem;
+  }
+}
+
+.balance-update {
+  font-size: 0.875rem;
+  opacity: 0.8;
+}
+
+.balance-details {
+  display: flex;
+  gap: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.balance-detail-item {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.balance-detail-label {
+  font-size: 0.875rem;
+  opacity: 0.9;
+}
+
+.balance-detail-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.balance-detail-value.positive {
+  color: var(--emerald-green-light);
+}
+
+/* Budget Card */
+.cuentas-claras-budget-card {
+  background: var(--bg-white);
+  border: 2px solid var(--border-color);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .cuentas-claras-budget-card {
+    padding: 1.5rem;
+  }
+}
+
+.budget-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.budget-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.budget-status-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.budget-status-badge.healthy {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--emerald-green-dark);
+}
+
+.budget-status-badge.warning {
+  background: rgba(245, 158, 11, 0.1);
+  color: #d97706;
+}
+
+.budget-status-badge.critical {
+  background: rgba(239, 68, 68, 0.1);
+  color: var(--error-color);
+}
+
+.budget-progress {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.budget-progress-bar {
+  width: 100%;
+  height: 1rem;
+  background: var(--border-color);
+  border-radius: 9999px;
+  overflow: hidden;
+  position: relative;
+}
+
+.budget-progress-fill {
+  height: 100%;
+  border-radius: 9999px;
+  transition: width 0.5s ease;
+}
+
+.budget-progress-fill.healthy {
+  background: var(--success-gradient);
+}
+
+.budget-progress-fill.warning {
+  background: linear-gradient(135deg, #f59e0b 0%, #fbbf24 100%);
+}
+
+.budget-progress-fill.critical {
+  background: linear-gradient(135deg, #ef4444 0%, #f87171 100%);
+}
+
+.budget-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+@media (max-width: 768px) {
+  .budget-stats {
+    grid-template-columns: 1fr;
+  }
+}
+
+.budget-stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.budget-stat-label {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+.budget-stat-value {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.budget-stat-value.positive {
+  color: var(--emerald-green);
+}
+
+/* Movements */
+.cuentas-claras-movements {
+  margin-top: 2rem;
+}
+
+.movements-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1.5rem;
+}
+
+.movements-empty {
+  text-align: center;
+  padding: 2rem;
+  color: var(--text-gray);
+}
+
+.movements-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.movement-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.25rem;
+  background: var(--bg-light);
+  border-radius: 1rem;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
+}
+
+.movement-item:hover {
+  background: white;
+  border-color: var(--border-color);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.movement-icon {
+  font-size: 2rem;
+  width: 3rem;
+  height: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 0.75rem;
+  flex-shrink: 0;
+}
+
+.movement-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.movement-concepto {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 0.25rem;
+}
+
+.movement-fecha {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+}
+
+.movement-amount {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.movement-importe {
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.movement-importe.positive {
+  color: var(--emerald-green);
+}
+
+.movement-importe.negative {
+  color: var(--error-color);
+}
+
+.movement-invoice-btn {
+  background: var(--primary-color);
+  color: white;
+  border: none;
+  width: 3rem;
+  height: 3rem;
+  border-radius: 0.75rem;
+  font-size: 1.25rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  min-width: 48px; /* Accesibilidad */
+  min-height: 48px;
+}
+
+.movement-invoice-btn:hover {
+  background: var(--primary-dark);
+  transform: scale(1.05);
+}
+
+.movement-invoice-btn:active {
+  transform: scale(0.95);
+}

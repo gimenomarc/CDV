@@ -1,0 +1,307 @@
+/* Muro de Evidencias */
+.muro-evidencias-container {
+  background: var(--bg-white);
+  border-radius: 1.5rem;
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .muro-evidencias-container {
+    padding: 1.5rem;
+    border-radius: 1rem;
+  }
+}
+
+.muro-evidencias-header {
+  margin-bottom: 2rem;
+}
+
+.muro-evidencias-title {
+  font-size: 1.875rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.muro-evidencias-subtitle {
+  font-size: 1rem;
+  color: var(--text-gray);
+}
+
+/* Resumen de Hitos */
+.hitos-resumen {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 768px) {
+  .hitos-resumen {
+    grid-template-columns: 1fr;
+  }
+}
+
+.hito-resumen-card {
+  background: var(--bg-light);
+  border: 2px solid var(--border-color);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  transition: all 0.3s ease;
+}
+
+.hito-resumen-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.hito-resumen-icon {
+  font-size: 2.5rem;
+  width: 4rem;
+  height: 4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 0.75rem;
+  flex-shrink: 0;
+}
+
+.hito-resumen-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.hito-resumen-value {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1;
+}
+
+.hito-resumen-label {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+  font-weight: 500;
+}
+
+/* Sección de Hitos */
+.hito-seccion {
+  margin-bottom: 2.5rem;
+}
+
+.hito-seccion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--border-color);
+}
+
+.hito-seccion-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.hito-seccion-count {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  background: var(--bg-light);
+  border-radius: 9999px;
+}
+
+/* Lista de Documentos */
+.hito-documentos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.hito-documento-card {
+  background: var(--bg-light);
+  border: 2px solid var(--border-color);
+  border-radius: 1.25rem;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+
+@media (max-width: 768px) {
+  .hito-documento-card {
+    padding: 1.5rem;
+  }
+}
+
+.hito-documento-card:hover {
+  border-color: var(--primary-color);
+  box-shadow: var(--shadow-md);
+  transform: translateY(-2px);
+}
+
+.hito-documento-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.hito-documento-info {
+  flex: 1;
+}
+
+.hito-documento-titulo {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 0.5rem;
+}
+
+.hito-documento-fecha {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+}
+
+.evidencia-badge {
+  padding: 0.5rem 1rem;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.evidencia-badge.firmada {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--emerald-green-dark);
+}
+
+.evidencia-badge.enviada {
+  background: rgba(59, 130, 246, 0.1);
+  color: var(--primary-blue-dark);
+}
+
+.evidencia-badge.emitido {
+  background: rgba(16, 185, 129, 0.1);
+  color: var(--emerald-green-dark);
+}
+
+/* Detalles del Documento */
+.hito-documento-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 0.75rem;
+}
+
+.hito-detail-item {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hito-detail-label {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+  font-weight: 500;
+  min-width: 120px;
+}
+
+.hito-detail-value {
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-dark);
+  flex: 1;
+}
+
+.hito-progress-bar {
+  flex: 1;
+  height: 0.5rem;
+  background: var(--border-color);
+  border-radius: 9999px;
+  overflow: hidden;
+  min-width: 100px;
+}
+
+.hito-progress-fill {
+  height: 100%;
+  background: var(--success-gradient);
+  border-radius: 9999px;
+  transition: width 0.5s ease;
+}
+
+.hito-acuse-badge {
+  font-size: 0.875rem;
+  color: var(--emerald-green);
+  font-weight: 600;
+  padding: 0.25rem 0.75rem;
+  background: rgba(16, 185, 129, 0.1);
+  border-radius: 9999px;
+}
+
+.hito-certificado-badge {
+  font-size: 0.875rem;
+  color: var(--primary-blue);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  background: rgba(59, 130, 246, 0.1);
+  border-radius: 0.5rem;
+  display: inline-block;
+}
+
+/* Acciones */
+.hito-documento-actions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.hito-action-btn {
+  padding: 0.875rem 1.5rem;
+  border-radius: 0.75rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-height: 48px; /* Accesibilidad */
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hito-action-btn.primary {
+  background: var(--primary-color);
+  color: white;
+}
+
+.hito-action-btn.primary:hover {
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.hito-action-btn.secondary {
+  background: white;
+  color: var(--text-dark);
+  border: 2px solid var(--border-color);
+}
+
+.hito-action-btn.secondary:hover {
+  border-color: var(--primary-color);
+  background: var(--bg-light);
+}

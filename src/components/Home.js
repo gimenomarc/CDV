@@ -69,16 +69,16 @@ const Home = () => {
       <section className="hero-section">
         <div className="hero-content">
           <div className="hero-badge">
-            <span className="hero-badge-text">✨ La forma más sencilla de gestionar tu comunidad</span>
+            <span className="hero-badge-text">🏆 Líder en transparencia y cumplimiento legal LPH</span>
           </div>
           <h1 className="hero-title">
-            <span className="hero-title-line">Tu comunidad,</span>
-            <span className="hero-title-line hero-title-highlight">más conectada</span>
-            <span className="hero-title-line">que nunca</span>
+            <span className="hero-title-line">Transparencia bancaria</span>
+            <span className="hero-title-line hero-title-highlight">en tiempo real</span>
+            <span className="hero-title-line">para tu comunidad</span>
           </h1>
           <p className="hero-subtitle">
-            Simplifica la gestión de tu comunidad de vecinos con una plataforma intuitiva y moderna. 
-            Actas, finanzas, votaciones y comunicación en un solo lugar.
+            Juntas sin impugnaciones y control total de tu comunidad desde el móvil. 
+            Plataforma líder en transparencia y cumplimiento legal (LPH).
           </p>
           <div className="hero-cta-group">
             <button onClick={handleGetStarted} className="hero-cta hero-cta-primary">
@@ -95,15 +95,15 @@ const Home = () => {
           <div className="hero-features">
             <div className="hero-feature-item">
               <span className="hero-feature-icon">✓</span>
-              <span>14 días gratis</span>
+              <span>Transparencia bancaria en tiempo real</span>
             </div>
             <div className="hero-feature-item">
               <span className="hero-feature-icon">✓</span>
-              <span>Sin tarjeta</span>
+              <span>Juntas sin impugnaciones</span>
             </div>
             <div className="hero-feature-item">
               <span className="hero-feature-icon">✓</span>
-              <span>Cancela cuando quieras</span>
+              <span>Control total desde el móvil</span>
             </div>
           </div>
         </div>
@@ -146,11 +146,11 @@ const Home = () => {
               </div>
             </div>
             <div className="feature-card feature-card-gradient-2">
-              <div className="feature-icon">💰</div>
-              <h3 className="feature-title">Control Financiero</h3>
+              <div className="feature-icon">💳</div>
+              <h3 className="feature-title">Cuentas Claras - Open Banking</h3>
               <p className="feature-description">
-                Visualiza el estado de la cuenta bancaria de la comunidad, movimientos y saldos actualizados de forma transparente. 
-                Consulta ingresos, gastos y presupuestos de manera clara y organizada.
+                Dashboard estilo fintech con saldo en tiempo real, gráfico de gastos vs presupuesto y trazabilidad completa. 
+                Cada cargo incluye icono para ver factura. Transparencia bancaria total.
               </p>
               <div className="feature-preview">
                 <div className="feature-preview-card">
@@ -168,11 +168,11 @@ const Home = () => {
               </div>
             </div>
             <div className="feature-card feature-card-gradient-3">
-              <div className="feature-icon">🔔</div>
-              <h3 className="feature-title">Sistema de Notificaciones</h3>
+              <div className="feature-icon">🚨</div>
+              <h3 className="feature-title">Alertas Inteligentes</h3>
               <p className="feature-description">
-                Recibe notificaciones cuando hay nuevas votaciones, actas publicadas o recordatorios importantes. 
-                Mantente siempre informado de lo que sucede en tu comunidad sin perder ningún detalle.
+                Panel de alertas de control con detección de anomalías: desviaciones presupuestarias, recibos devueltos, 
+                facturas duplicadas y plazos legales. IA de detección de anomalías integrada.
               </p>
               <div className="feature-preview">
                 <div className="feature-preview-card">
@@ -187,11 +187,11 @@ const Home = () => {
               </div>
             </div>
             <div className="feature-card feature-card-gradient-1">
-              <div className="feature-icon">🗳️</div>
-              <h3 className="feature-title">Votaciones Digitales</h3>
+              <div className="feature-icon">🏛️</div>
+              <h3 className="feature-title">Gobernanza Digital</h3>
               <p className="feature-description">
-                Participa en votaciones importantes directamente desde la plataforma. Vota sobre presupuestos, obras, 
-                cambios en la comunidad y más. Recibe notificaciones cuando hay votaciones pendientes.
+                Juntas virtuales con quórum automático, sistema de votación con doble cómputo (votos personales y porcentajes de propiedad), 
+                y cronómetro de plazos legales. Juntas sin impugnaciones garantizadas.
               </p>
               <div className="feature-preview">
                 <div className="feature-preview-card">
@@ -208,11 +208,11 @@ const Home = () => {
               </div>
             </div>
             <div className="feature-card feature-card-gradient-2">
-              <div className="feature-icon">📤</div>
-              <h3 className="feature-title">Subida de Documentos</h3>
+              <div className="feature-icon">📚</div>
+              <h3 className="feature-title">Muro de Evidencias</h3>
               <p className="feature-description">
-                Los vecinos pueden subir actas, documentos y archivos importantes directamente desde el dashboard. 
-                Fácil, rápido y seguro. Todos los documentos quedan organizados y accesibles.
+                Gestión documental organizada por hitos legales: Actas firmadas digitalmente, Convocatorias con acuse de recibo 
+                y Certificados. Todo el historial legal de tu comunidad en un solo lugar.
               </p>
               <div className="feature-preview">
                 <div className="feature-preview-card">
@@ -309,16 +309,17 @@ const Home = () => {
             </div>
 
             <div className="main-feature-card">
-              <div className="main-feature-icon">🗳️</div>
-              <h3 className="main-feature-title">Votaciones Digitales</h3>
+              <div className="main-feature-icon">🏛️</div>
+              <h3 className="main-feature-title">Gobernanza Digital</h3>
               <p className="main-feature-description">
-                Participa en las decisiones importantes de forma digital. Vota directamente desde la plataforma, ve resultados en tiempo real y consulta el historial completo.
+                Juntas virtuales con cumplimiento legal garantizado. Quórum automático, votación con doble cómputo y cronómetro de plazos legales. 
+                Juntas sin impugnaciones.
               </p>
               <ul className="main-feature-list">
-                <li>Votaciones en tiempo real</li>
-                <li>Resultados instantáneos</li>
-                <li>Historial completo</li>
-                <li>Notificaciones automáticas</li>
+                <li>Contador de quórum automático</li>
+                <li>Sistema de votación con doble cómputo</li>
+                <li>Cronómetro de plazos legales</li>
+                <li>Cumplimiento LPH garantizado</li>
               </ul>
               <div className="main-feature-preview">
                 <div className="preview-card-small">
@@ -336,16 +337,17 @@ const Home = () => {
             </div>
 
             <div className="main-feature-card">
-              <div className="main-feature-icon">💰</div>
-              <h3 className="main-feature-title">Transparencia Financiera Total</h3>
+              <div className="main-feature-icon">💳</div>
+              <h3 className="main-feature-title">Cuentas Claras - Open Banking</h3>
               <p className="main-feature-description">
-                Control completo sobre las finanzas. Visualiza el saldo actual, consulta movimientos bancarios, ingresos y gastos actualizados en tiempo real.
+                Dashboard estilo fintech con transparencia bancaria en tiempo real. Saldo actualizado, gráfico de gastos vs presupuesto 
+                y trazabilidad completa con icono de ver factura en cada movimiento.
               </p>
               <ul className="main-feature-list">
-                <li>Saldo actualizado en tiempo real</li>
-                <li>Historial completo de movimientos</li>
-                <li>Clasificación de ingresos y gastos</li>
-                <li>Información de cuenta bancaria</li>
+                <li>Saldo en tiempo real actualizado cada 2 minutos</li>
+                <li>Gráfico de gastos vs presupuesto anual</li>
+                <li>Trazabilidad completa con ver factura</li>
+                <li>Open Banking integrado</li>
               </ul>
               <div className="main-feature-preview">
                 <div className="preview-card-small">

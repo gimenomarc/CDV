@@ -120,11 +120,11 @@
 .hero-badge-text {
   display: inline-block;
   padding: 0.375rem 0.875rem;
-  background: rgba(102, 126, 234, 0.1);
+  background: rgba(30, 64, 175, 0.1);
   border-radius: 9999px;
   font-size: 0.8125rem;
   font-weight: 500;
-  color: #667eea;
+  color: var(--primary-color);
   letter-spacing: -0.01em;
 }
 
@@ -170,7 +170,7 @@
 }
 
 .hero-title-highlight {
-  color: #667eea;
+  color: var(--primary-color);
   position: relative;
 }
 
@@ -243,15 +243,15 @@
 }
 
 .hero-cta-primary {
-  background: #0071e3;
+  background: var(--primary-color);
   color: white;
-  box-shadow: none;
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
 }
 
 .hero-cta-primary:hover {
-  background: #0077ed;
-  transform: none;
-  box-shadow: none;
+  background: var(--primary-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
 }
 
 .hero-cta-primary:active {
@@ -267,15 +267,16 @@
 }
 
 .hero-cta-secondary {
-  background: transparent;
-  color: #0071e3;
-  border: 1px solid rgba(0, 113, 227, 0.3);
+  background: white;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
 }
 
 .hero-cta-secondary:hover {
-  background: rgba(0, 113, 227, 0.05);
-  border-color: rgba(0, 113, 227, 0.5);
-  transform: none;
+  background: var(--primary-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
 }
 
 .hero-features {
@@ -1357,19 +1358,20 @@
   padding: 1.25rem 2.5rem;
   font-size: 1.125rem;
   font-weight: 600;
-  background: #0071e3;
+  background: var(--primary-color);
   color: white;
   border: none;
   border-radius: 1.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 113, 227, 0.3);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
+  min-height: 56px; /* Accesibilidad */
 }
 
 .cta-button-primary:hover {
-  background: #0077ed;
+  background: var(--primary-dark);
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 113, 227, 0.4);
+  box-shadow: 0 6px 20px rgba(30, 64, 175, 0.4);
 }
 
 .cta-button-secondary {
@@ -1380,16 +1382,19 @@
   font-size: 1.125rem;
   font-weight: 600;
   background: white;
-  color: #0071e3;
-  border: 2px solid #0071e3;
+  color: var(--primary-color);
+  border: 2px solid var(--primary-color);
   border-radius: 1.5rem;
   cursor: pointer;
   transition: all 0.3s ease;
+  min-height: 56px; /* Accesibilidad */
 }
 
 .cta-button-secondary:hover {
-  background: rgba(0, 113, 227, 0.05);
+  background: var(--primary-color);
+  color: white;
   transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(30, 64, 175, 0.3);
 }
 
 .cta-arrow {
