@@ -51,7 +51,17 @@ const Notifications = ({ notifications, onClose, onMarkAsRead }) => {
                 <div className="notification-content">
                   <h3 className="notification-title">{notification.titulo}</h3>
                   <p className="notification-message">{notification.mensaje}</p>
-                  <span className="notification-time">{notification.fecha}</span>
+                  <span className="notification-time">
+                    {notification.created_at 
+                      ? new Date(notification.created_at).toLocaleDateString('es-ES', {
+                          day: '2-digit',
+                          month: 'short',
+                          year: 'numeric',
+                          hour: '2-digit',
+                          minute: '2-digit'
+                        })
+                      : notification.fecha || 'Fecha no disponible'}
+                  </span>
                 </div>
                 {!notification.leida && (
                   <div className="notification-dot"></div>

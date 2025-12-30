@@ -51,7 +51,7 @@ const Home = () => {
                   onClick={() => setShowRegister(true)}
                   className="header-link"
                 >
-                  Información
+                  Registrarse
                 </button>
                 <button
                   onClick={() => setShowLogin(true)}
@@ -134,6 +134,16 @@ const Home = () => {
                 Accede a todas las actas de reuniones de manera organizada y centralizada. Los vecinos pueden subir sus propias actas, 
                 consultar decisiones, acuerdos y votaciones en tiempo real. Todo el historial disponible con un solo clic.
               </p>
+              <div className="feature-preview">
+                <div className="feature-preview-card">
+                  <div className="feature-preview-header">
+                    <span className="feature-preview-date">15 Mar 2024</span>
+                    <span className="feature-preview-status">Aprobada</span>
+                  </div>
+                  <div className="feature-preview-title">Reunión Ordinaria</div>
+                  <div className="feature-preview-desc">Aprobación de presupuesto anual...</div>
+                </div>
+              </div>
             </div>
             <div className="feature-card feature-card-gradient-2">
               <div className="feature-icon">💰</div>
@@ -142,6 +152,20 @@ const Home = () => {
                 Visualiza el estado de la cuenta bancaria de la comunidad, movimientos y saldos actualizados de forma transparente. 
                 Consulta ingresos, gastos y presupuestos de manera clara y organizada.
               </p>
+              <div className="feature-preview">
+                <div className="feature-preview-card">
+                  <div className="feature-preview-balance">
+                    <span className="feature-preview-label">Saldo Actual</span>
+                    <span className="feature-preview-value">45.230,75 €</span>
+                  </div>
+                  <div className="feature-preview-movements">
+                    <div className="feature-preview-movement">
+                      <span>Cuota Marzo</span>
+                      <span className="positive">+1.250,00 €</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="feature-card feature-card-gradient-3">
               <div className="feature-icon">🔔</div>
@@ -150,6 +174,17 @@ const Home = () => {
                 Recibe notificaciones cuando hay nuevas votaciones, actas publicadas o recordatorios importantes. 
                 Mantente siempre informado de lo que sucede en tu comunidad sin perder ningún detalle.
               </p>
+              <div className="feature-preview">
+                <div className="feature-preview-card">
+                  <div className="feature-preview-notification">
+                    <span className="feature-preview-notif-icon">🔔</span>
+                    <div>
+                      <div className="feature-preview-notif-title">Nueva votación disponible</div>
+                      <div className="feature-preview-notif-time">Hace 2 horas</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="feature-card feature-card-gradient-1">
               <div className="feature-icon">🗳️</div>
@@ -158,6 +193,19 @@ const Home = () => {
                 Participa en votaciones importantes directamente desde la plataforma. Vota sobre presupuestos, obras, 
                 cambios en la comunidad y más. Recibe notificaciones cuando hay votaciones pendientes.
               </p>
+              <div className="feature-preview">
+                <div className="feature-preview-card">
+                  <div className="feature-preview-vote">
+                    <div className="feature-preview-vote-title">Aprobación de obras</div>
+                    <div className="feature-preview-vote-progress">
+                      <div className="feature-preview-progress-bar">
+                        <div className="feature-preview-progress-fill" style={{ width: '65%' }}></div>
+                      </div>
+                      <span className="feature-preview-progress-text">65% votado</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="feature-card feature-card-gradient-2">
               <div className="feature-icon">📤</div>
@@ -166,6 +214,17 @@ const Home = () => {
                 Los vecinos pueden subir actas, documentos y archivos importantes directamente desde el dashboard. 
                 Fácil, rápido y seguro. Todos los documentos quedan organizados y accesibles.
               </p>
+              <div className="feature-preview">
+                <div className="feature-preview-card">
+                  <div className="feature-preview-upload">
+                    <span className="feature-preview-upload-icon">📄</span>
+                    <div>
+                      <div className="feature-preview-upload-name">acta_reunion.pdf</div>
+                      <div className="feature-preview-upload-size">245 KB</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <div className="feature-card feature-card-gradient-3">
               <div className="feature-icon">🔐</div>
@@ -174,6 +233,17 @@ const Home = () => {
                 Sistema de autenticación seguro que garantiza que solo los vecinos autorizados puedan acceder a la información. 
                 Tus datos están protegidos y solo visibles para miembros de tu comunidad.
               </p>
+              <div className="feature-preview">
+                <div className="feature-preview-card">
+                  <div className="feature-preview-security">
+                    <span className="feature-preview-security-icon">🔒</span>
+                    <div>
+                      <div className="feature-preview-security-title">Acceso Verificado</div>
+                      <div className="feature-preview-security-desc">Sesión segura activa</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -189,76 +259,101 @@ const Home = () => {
             </p>
           </div>
           
-          <div className="detailed-features">
-            <div className="detailed-feature-item">
-              <div className="detailed-feature-image">📋</div>
-              <div className="detailed-feature-content">
-                <h3>Gestión Completa de Actas</h3>
-                <p>
-                  Nuestra plataforma permite a los vecinos y administradores gestionar todas las actas de reuniones de forma eficiente. 
-                  Puedes subir nuevas actas directamente desde el dashboard, adjuntando documentos PDF o Word. Cada acta incluye información 
-                  detallada como fecha, tipo de reunión, participantes, decisiones tomadas y acuerdos alcanzados.
-                </p>
-                <ul className="feature-list">
-                  <li>Subida de actas con archivos adjuntos</li>
-                  <li>Organización por fecha y tipo de reunión</li>
-                  <li>Búsqueda rápida de actas anteriores</li>
-                  <li>Estados: Aprobada, Pendiente, Rechazada</li>
-                </ul>
+          <div className="main-features-grid">
+            <div className="main-feature-card">
+              <div className="main-feature-icon">📋</div>
+              <h3 className="main-feature-title">Gestión Completa de Actas</h3>
+              <p className="main-feature-description">
+                Gestiona todas las actas de reuniones de forma eficiente. Sube nuevas actas con documentos PDF o Word, organiza por fecha y tipo, y busca rápidamente en el historial.
+              </p>
+              <ul className="main-feature-list">
+                <li>Subida de actas con archivos adjuntos</li>
+                <li>Organización por fecha y tipo</li>
+                <li>Búsqueda rápida</li>
+                <li>Estados: Aprobada, Pendiente, Rechazada</li>
+              </ul>
+              <div className="main-feature-preview">
+                <div className="preview-card-small">
+                  <div className="preview-header-small">
+                    <span className="preview-date-small">15 Mar 2024</span>
+                    <span className="preview-status-small">Aprobada</span>
+                  </div>
+                  <div className="preview-title-small">Reunión Ordinaria</div>
+                </div>
               </div>
             </div>
 
-            <div className="detailed-feature-item reverse">
-              <div className="detailed-feature-image">🔔</div>
-              <div className="detailed-feature-content">
-                <h3>Sistema Inteligente de Notificaciones</h3>
-                <p>
-                  Nunca te pierdas información importante. Nuestro sistema de notificaciones te avisa cuando hay nuevas votaciones pendientes, 
-                  cuando se publican nuevas actas, recordatorios de pagos o cualquier evento relevante en tu comunidad. Las notificaciones se 
-                  organizan por prioridad y puedes marcarlas como leídas cuando las hayas revisado.
-                </p>
-                <ul className="feature-list">
-                  <li>Notificaciones en tiempo real</li>
-                  <li>Avisos de votaciones pendientes</li>
-                  <li>Recordatorios de pagos y cuotas</li>
-                  <li>Alertas de nuevas actas publicadas</li>
-                </ul>
+            <div className="main-feature-card">
+              <div className="main-feature-icon">🔔</div>
+              <h3 className="main-feature-title">Sistema Inteligente de Notificaciones</h3>
+              <p className="main-feature-description">
+                Recibe avisos en tiempo real sobre votaciones pendientes, nuevas actas publicadas, recordatorios de pagos y eventos relevantes en tu comunidad.
+              </p>
+              <ul className="main-feature-list">
+                <li>Notificaciones en tiempo real</li>
+                <li>Avisos de votaciones pendientes</li>
+                <li>Recordatorios de pagos y cuotas</li>
+                <li>Alertas de nuevas actas</li>
+              </ul>
+              <div className="main-feature-preview">
+                <div className="preview-card-small">
+                  <div className="preview-notif-small">
+                    <span>🔔</span>
+                    <div>
+                      <div className="preview-notif-title-small">Nueva votación disponible</div>
+                      <div className="preview-notif-time-small">Hace 2 horas</div>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="detailed-feature-item">
-              <div className="detailed-feature-image">🗳️</div>
-              <div className="detailed-feature-content">
-                <h3>Votaciones Digitales</h3>
-                <p>
-                  Participa en las decisiones importantes de tu comunidad de forma digital. Cuando hay una votación disponible, recibirás 
-                  una notificación. Puedes votar directamente desde la plataforma, ver los resultados en tiempo real y consultar el historial 
-                  de todas las votaciones anteriores. Todo de forma transparente y segura.
-                </p>
-                <ul className="feature-list">
-                  <li>Votaciones en tiempo real</li>
-                  <li>Resultados instantáneos</li>
-                  <li>Historial completo de votaciones</li>
-                  <li>Notificaciones automáticas</li>
-                </ul>
+            <div className="main-feature-card">
+              <div className="main-feature-icon">🗳️</div>
+              <h3 className="main-feature-title">Votaciones Digitales</h3>
+              <p className="main-feature-description">
+                Participa en las decisiones importantes de forma digital. Vota directamente desde la plataforma, ve resultados en tiempo real y consulta el historial completo.
+              </p>
+              <ul className="main-feature-list">
+                <li>Votaciones en tiempo real</li>
+                <li>Resultados instantáneos</li>
+                <li>Historial completo</li>
+                <li>Notificaciones automáticas</li>
+              </ul>
+              <div className="main-feature-preview">
+                <div className="preview-card-small">
+                  <div className="preview-vote-small">
+                    <div className="preview-vote-title-small">Aprobación de obras</div>
+                    <div className="preview-progress-small">
+                      <div className="preview-progress-bar-small">
+                        <div className="preview-progress-fill-small" style={{ width: '65%' }}></div>
+                      </div>
+                      <span className="preview-progress-text-small">65% votado</span>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div className="detailed-feature-item reverse">
-              <div className="detailed-feature-image">💰</div>
-              <div className="detailed-feature-content">
-                <h3>Transparencia Financiera Total</h3>
-                <p>
-                  Mantén un control completo sobre las finanzas de tu comunidad. Visualiza el saldo actual, consulta todos los movimientos 
-                  bancarios, ingresos y gastos. Cada movimiento está claramente identificado con su concepto, fecha e importe. La información 
-                  financiera se actualiza en tiempo real para que siempre tengas la información más actualizada.
-                </p>
-                <ul className="feature-list">
-                  <li>Saldo actualizado en tiempo real</li>
-                  <li>Historial completo de movimientos</li>
-                  <li>Clasificación de ingresos y gastos</li>
-                  <li>Información de cuenta bancaria</li>
-                </ul>
+            <div className="main-feature-card">
+              <div className="main-feature-icon">💰</div>
+              <h3 className="main-feature-title">Transparencia Financiera Total</h3>
+              <p className="main-feature-description">
+                Control completo sobre las finanzas. Visualiza el saldo actual, consulta movimientos bancarios, ingresos y gastos actualizados en tiempo real.
+              </p>
+              <ul className="main-feature-list">
+                <li>Saldo actualizado en tiempo real</li>
+                <li>Historial completo de movimientos</li>
+                <li>Clasificación de ingresos y gastos</li>
+                <li>Información de cuenta bancaria</li>
+              </ul>
+              <div className="main-feature-preview">
+                <div className="preview-card-small">
+                  <div className="preview-balance-small">
+                    <span className="preview-label-small">Saldo Actual</span>
+                    <span className="preview-value-small">45.230,75 €</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -330,7 +425,7 @@ const Home = () => {
           <div className="section-header">
             <h2 className="section-title">¿Cómo funciona?</h2>
             <p className="section-subtitle">
-              Proceso simple y directo en 5 pasos
+              Proceso simple y directo en 6 pasos
             </p>
           </div>
           <div className="steps-grid">
@@ -339,7 +434,8 @@ const Home = () => {
               { step: '2', title: 'Explora el Dashboard', desc: 'Visualiza todas las actas disponibles, notificaciones pendientes y estado financiero', icon: '📊' },
               { step: '3', title: 'Participa Activamente', desc: 'Vota en propuestas importantes, sube actas y documentos, y mantente informado', icon: '🗳️' },
               { step: '4', title: 'Recibe Notificaciones', desc: 'Te avisamos cuando hay votaciones pendientes, nuevas actas o información importante', icon: '🔔' },
-              { step: '5', title: 'Consulta y Gestiona', desc: 'Revisa el historial completo, consulta finanzas y gestiona toda la documentación', icon: '📄' }
+              { step: '5', title: 'Consulta y Gestiona', desc: 'Revisa el historial completo, consulta finanzas y gestiona toda la documentación', icon: '📄' },
+              { step: '6', title: 'Colabora y Comunica', desc: 'Comparte información con vecinos, accede al foro de ayuda y mantén tu comunidad conectada', icon: '🤝' }
             ].map((item, index) => (
               <div key={index} className="step-card">
                 <div className="step-number">{item.step}</div>
@@ -353,7 +449,7 @@ const Home = () => {
       </section>
 
       {/* Benefits Section */}
-      <section className="section section-dark">
+      <section className="section section-benefits">
         <div className="section-content">
           <div className="section-header">
             <h2 className="section-title">Beneficios para tu Comunidad</h2>
@@ -458,20 +554,21 @@ const Home = () => {
       {/* CTA Section */}
       <section className="cta-section">
         <div className="cta-content">
-          <h2 style={{ fontSize: '2.25rem', fontWeight: 700, color: 'var(--text-dark)', marginBottom: '1.5rem' }}>
+          <div className="cta-badge">🚀 Comienza Ahora</div>
+          <h2 className="cta-title">
             ¿Listo para comenzar?
           </h2>
-          <p style={{ fontSize: '1.25rem', color: 'var(--text-gray)', marginBottom: '2rem' }}>
+          <p className="cta-subtitle">
             Únete a las comunidades que ya están digitalizando su gestión. Regístrate para recibir información o accede directamente.
           </p>
-          <div style={{ display: 'flex', gap: '1rem', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <button onClick={handleGetStarted} className="btn btn-primary" style={{ fontSize: '1.125rem', padding: '1rem 2.5rem' }}>
-              Acceder Ahora →
+          <div className="cta-buttons">
+            <button onClick={handleGetStarted} className="cta-button-primary">
+              <span>Acceder Ahora</span>
+              <span className="cta-arrow">→</span>
             </button>
             <button 
               onClick={() => setShowRegister(true)}
-              className="btn btn-secondary" 
-              style={{ fontSize: '1.125rem', padding: '1rem 2.5rem' }}
+              className="cta-button-secondary"
             >
               📧 Recibir Información
             </button>
@@ -482,13 +579,76 @@ const Home = () => {
       {/* Footer */}
       <footer className="footer">
         <div className="footer-content">
-          <p>© 2024 Comunidad de Vecinos. Plataforma de gestión digital.</p>
+          <div className="footer-main">
+            <div className="footer-section">
+              <div className="footer-logo">
+                <span className="footer-logo-icon">🏢</span>
+                <span className="footer-logo-text">Comunidad de Vecinos</span>
+              </div>
+              <p className="footer-description">
+                La plataforma digital más completa para gestionar tu comunidad de vecinos de forma eficiente y transparente.
+              </p>
+            </div>
+            <div className="footer-section">
+              <h4 className="footer-title">Producto</h4>
+              <ul className="footer-links">
+                <li><a href="#features">Funcionalidades</a></li>
+                <li><a href="#pricing">Precios</a></li>
+                <li><a href="#how-it-works">Cómo Funciona</a></li>
+                <li><a href="#benefits">Beneficios</a></li>
+              </ul>
+            </div>
+            <div className="footer-section">
+              <h4 className="footer-title">Empresa</h4>
+              <ul className="footer-links">
+                <li><a href="#about">Sobre Nosotros</a></li>
+                <li><a href="#contact">Contacto</a></li>
+                <li><a href="#blog">Blog</a></li>
+                <li><a href="#careers">Carreras</a></li>
+              </ul>
+            </div>
+            <div className="footer-section">
+              <h4 className="footer-title">Legal</h4>
+              <ul className="footer-links">
+                <li><a href="#privacy">Política de Privacidad</a></li>
+                <li><a href="#terms">Términos y Condiciones</a></li>
+                <li><a href="#cookies">Política de Cookies</a></li>
+                <li><a href="#legal">Aviso Legal</a></li>
+              </ul>
+            </div>
+          </div>
+          <div className="footer-bottom">
+            <p className="footer-copyright">
+              © 2024 Comunidad de Vecinos. Todos los derechos reservados.
+            </p>
+            <div className="footer-social">
+              <a href="#" className="footer-social-link" aria-label="Facebook">📘</a>
+              <a href="#" className="footer-social-link" aria-label="Twitter">🐦</a>
+              <a href="#" className="footer-social-link" aria-label="LinkedIn">💼</a>
+            </div>
+          </div>
         </div>
       </footer>
 
       {/* Modals */}
-      {showLogin && <LoginModal onClose={() => setShowLogin(false)} />}
-      {showRegister && <RegisterModal onClose={() => setShowRegister(false)} />}
+      {showLogin && (
+        <LoginModal 
+          onClose={() => setShowLogin(false)} 
+          onSwitchToRegister={() => {
+            setShowLogin(false);
+            setShowRegister(true);
+          }}
+        />
+      )}
+      {showRegister && (
+        <RegisterModal 
+          onClose={() => setShowRegister(false)}
+          onSwitchToLogin={() => {
+            setShowRegister(false);
+            setShowLogin(true);
+          }}
+        />
+      )}
     </div>
   );
 };

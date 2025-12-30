@@ -1,16 +1,21 @@
 import React, { useState } from 'react';
+import { useAuth } from '../context/AuthContext';
+import { actasService } from '../services/supabaseService';
 import './UploadActa.css';
 
 const UploadActa = ({ onClose, onUpload }) => {
+  const { user } = useAuth();
   const [formData, setFormData] = useState({
     titulo: '',
     tipo: 'ordinaria',
     fecha: '',
     descripcion: '',
+    participantes: 0,
     archivo: null
   });
   const [uploading, setUploading] = useState(false);
   const [uploaded, setUploaded] = useState(false);
+  const [error, setError] = useState('');
 
   const handleChange = (e) => {
     if (e.target.name === 'archivo') {
@@ -28,32 +33,53 @@ const UploadActa = ({ onClose, onUpload }) => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (!user) {
+      setError('Debes estar autenticado para subir actas');
+      return;
+    }
+
     setUploading(true);
+    setError('');
     
-    // Simular subida (en MVP no se sube realmente)
-    setTimeout(() => {
-      const nuevaActa = {
-        id: Date.now(),
+    try {
+      // Crear acta en la base de datos
+      const { data: acta, error: actaError } = await actasService.createActa({
         titulo: formData.titulo,
         tipo: formData.tipo,
         fecha: formData.fecha,
         descripcion: formData.descripcion,
-        estado: 'Pendiente',
-        participantes: 0,
-        archivo: formData.archivo?.name || null
-      };
-      
-      if (onUpload) {
-        onUpload(nuevaActa);
+        participantes: parseInt(formData.participantes) || 0,
+        archivo_nombre: formData.archivo?.name || null
+      }, user.id);
+
+      if (actaError) {
+        throw actaError;
       }
-      
+
+      // Si hay archivo, subirlo a Storage
+      if (formData.archivo && acta?.id) {
+        const { error: uploadError } = await actasService.uploadActaFile(formData.archivo, acta.id);
+        if (uploadError) {
+          console.error('Error subiendo archivo:', uploadError);
+          // No lanzar error, la acta ya está creada
+        }
+      }
+
       setUploading(false);
       setUploaded(true);
+      
+      if (onUpload) {
+        onUpload();
+      }
       
       setTimeout(() => {
         onClose();
       }, 2000);
-    }, 1500);
+    } catch (err) {
+      console.error('Error subiendo acta:', err);
+      setError(err.message || 'Error al subir el acta. Intenta nuevamente.');
+      setUploading(false);
+    }
   };
 
   if (uploaded) {
@@ -142,6 +168,21 @@ const UploadActa = ({ onClose, onUpload }) => {
             />
           </div>
           <div className="form-group">
+            <label htmlFor="participantes" className="form-label">
+              Número de Participantes
+            </label>
+            <input
+              type="number"
+              id="participantes"
+              name="participantes"
+              value={formData.participantes}
+              onChange={handleChange}
+              placeholder="0"
+              className="form-input"
+              min="0"
+            />
+          </div>
+          <div className="form-group">
             <label htmlFor="archivo" className="form-label">
               Archivo del Acta (PDF, DOC, DOCX)
             </label>
@@ -166,6 +207,7 @@ const UploadActa = ({ onClose, onUpload }) => {
               </label>
             </div>
           </div>
+          {error && <div className="error-message" style={{ marginBottom: '1rem' }}>{error}</div>}
           <div className="form-actions">
             <button
               type="button"

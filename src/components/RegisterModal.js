@@ -1,24 +1,55 @@
 import React, { useState } from 'react';
+import { useAuth } from '../context/AuthContext';
 import './RegisterModal.css';
 
-const RegisterModal = ({ onClose }) => {
+const RegisterModal = ({ onClose, onSwitchToLogin }) => {
   const [formData, setFormData] = useState({
     nombre: '',
     email: '',
+    password: '',
+    confirmPassword: '',
     telefono: '',
     comunidad: '',
     interes: 'informacion'
   });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
+  const { register } = useAuth();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Simular envío (en MVP no se envía realmente)
-    console.log('Datos registrados:', formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      onClose();
-    }, 2000);
+    setError('');
+
+    // Validaciones
+    if (formData.password !== formData.confirmPassword) {
+      setError('Las contraseñas no coinciden');
+      return;
+    }
+
+    if (formData.password.length < 6) {
+      setError('La contraseña debe tener al menos 6 caracteres');
+      return;
+    }
+
+    setLoading(true);
+
+    const result = await register(formData.email, formData.password, {
+      nombre: formData.nombre,
+      telefono: formData.telefono,
+      comunidad: formData.comunidad
+    });
+
+    setLoading(false);
+
+    if (result.success) {
+      setSubmitted(true);
+      setTimeout(() => {
+        onClose();
+      }, 2000);
+    } else {
+      setError(result.error || 'Error al registrarse. Intenta nuevamente.');
+    }
   };
 
   const handleChange = (e) => {
@@ -86,6 +117,38 @@ const RegisterModal = ({ onClose }) => {
             />
           </div>
           <div className="form-group">
+            <label htmlFor="password" className="form-label">
+              Contraseña *
+            </label>
+            <input
+              type="password"
+              id="password"
+              name="password"
+              value={formData.password}
+              onChange={handleChange}
+              placeholder="Mínimo 6 caracteres"
+              className="form-input"
+              required
+              minLength={6}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="confirmPassword" className="form-label">
+              Confirmar Contraseña *
+            </label>
+            <input
+              type="password"
+              id="confirmPassword"
+              name="confirmPassword"
+              value={formData.confirmPassword}
+              onChange={handleChange}
+              placeholder="Confirma tu contraseña"
+              className="form-input"
+              required
+              minLength={6}
+            />
+          </div>
+          <div className="form-group">
             <label htmlFor="telefono" className="form-label">
               Teléfono
             </label>
@@ -130,10 +193,41 @@ const RegisterModal = ({ onClose }) => {
               <option value="notificaciones">Sistema de notificaciones</option>
             </select>
           </div>
-          <button type="submit" className="btn btn-primary" style={{ width: '100%' }}>
-            Registrarme
+          {error && <div className="error-message" style={{ marginBottom: '1rem' }}>{error}</div>}
+          <button 
+            type="submit" 
+            className="btn btn-primary" 
+            style={{ width: '100%' }}
+            disabled={loading}
+          >
+            {loading ? 'Registrando...' : 'Registrarme'}
           </button>
         </form>
+        <div style={{ marginTop: '1rem', textAlign: 'center' }}>
+          <p style={{ color: 'var(--text-gray)', fontSize: '0.875rem' }}>
+            ¿Ya tienes cuenta?{' '}
+            <button
+              type="button"
+              onClick={() => {
+                onClose();
+                if (onSwitchToLogin) {
+                  onSwitchToLogin();
+                }
+              }}
+              style={{
+                background: 'none',
+                border: 'none',
+                color: 'var(--primary-color)',
+                cursor: 'pointer',
+                textDecoration: 'underline',
+                padding: 0,
+                fontSize: '0.875rem'
+              }}
+            >
+              Inicia sesión aquí
+            </button>
+          </p>
+        </div>
       </div>
     </div>
   );

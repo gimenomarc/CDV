@@ -5,7 +5,21 @@ import Dashboard from './components/Dashboard';
 import { AuthProvider, useAuth } from './context/AuthContext';
 
 function PrivateRoute({ children }) {
-  const { isAuthenticated } = useAuth();
+  const { isAuthenticated, loading } = useAuth();
+  
+  if (loading) {
+    return (
+      <div style={{ 
+        display: 'flex', 
+        justifyContent: 'center', 
+        alignItems: 'center', 
+        height: '100vh' 
+      }}>
+        <p>Cargando...</p>
+      </div>
+    );
+  }
+  
   return isAuthenticated ? children : <Navigate to="/" />;
 }
 

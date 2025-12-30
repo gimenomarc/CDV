@@ -1,6 +1,6 @@
 .pricing-section {
   padding: 5rem 0;
-  background: linear-gradient(135deg, #f9fafb 0%, #f0f4ff 100%);
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
 }
 
 .pricing-grid {
@@ -104,22 +104,29 @@
   margin-bottom: 2rem;
   padding-bottom: 2rem;
   border-bottom: 2px solid var(--bg-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
 }
 
 .pricing-amount {
-  font-size: 3rem;
+  font-size: 3.5rem;
   font-weight: 800;
   background: var(--primary-gradient);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
   line-height: 1;
+  display: block;
 }
 
 .pricing-period {
   font-size: 1rem;
   color: var(--text-gray);
   font-weight: 500;
+  display: block;
+  margin-top: 0.25rem;
 }
 
 .pricing-features {
