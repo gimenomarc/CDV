@@ -1,0 +1,182 @@
+.cuenta-container {
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: var(--shadow-xl);
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cuenta-container {
+    padding: 2rem;
+  }
+}
+
+.cuenta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.cuenta-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.cuenta-status {
+  padding: 0.25rem 0.75rem;
+  background: #d4edda;
+  color: #155724;
+  border-radius: 9999px;
+  font-size: 0.875rem;
+  font-weight: 600;
+}
+
+.cuenta-saldo-card {
+  background: var(--primary-gradient);
+  border-radius: 0.75rem;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  color: white;
+}
+
+.cuenta-saldo-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.cuenta-saldo-value {
+  font-size: 2.25rem;
+  font-weight: 700;
+}
+
+.cuenta-saldo-divider {
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cuenta-disponible-label {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.875rem;
+}
+
+.cuenta-disponible-value {
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.cuenta-info-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .cuenta-info-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.cuenta-info-item {
+  background: var(--bg-light);
+  border-radius: 0.5rem;
+  padding: 1rem;
+}
+
+.cuenta-info-label {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+  margin-bottom: 0.25rem;
+}
+
+.cuenta-info-value {
+  font-family: 'Courier New', monospace;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.cuenta-movimientos-title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 1rem;
+}
+
+.cuenta-movimientos-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.cuenta-movimiento {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: var(--bg-light);
+  border-radius: 0.5rem;
+  transition: background 0.3s ease;
+}
+
+.cuenta-movimiento:hover {
+  background: #e2e8f0;
+}
+
+.cuenta-movimiento-info {
+  flex: 1;
+}
+
+.cuenta-movimiento-concepto {
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.cuenta-movimiento-fecha {
+  font-size: 0.875rem;
+  color: var(--text-gray);
+  margin-top: 0.25rem;
+}
+
+.cuenta-movimiento-amount {
+  text-align: right;
+}
+
+.cuenta-movimiento-importe {
+  font-size: 1.125rem;
+  font-weight: 700;
+}
+
+.cuenta-movimiento-importe.positive {
+  color: #10b981;
+}
+
+.cuenta-movimiento-importe.negative {
+  color: #ef4444;
+}
+
+.cuenta-movimiento-badge {
+  display: inline-block;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  margin-top: 0.25rem;
+}
+
+.cuenta-movimiento-badge.ingreso {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.cuenta-movimiento-badge.gasto {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
